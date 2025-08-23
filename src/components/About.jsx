@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 const About = () => {
   const paragraphVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: i => ({
+    visible: (i) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.3, duration: 0.6, ease: "easeOut" }
+      transition: { delay: i * 0.3, duration: 0.6, ease: "easeOut" },
     }),
   };
 
@@ -44,9 +44,16 @@ const About = () => {
           About Me
         </h2>
 
-        <p className="text-lg md:text-xl leading-relaxed">
-          Hi, I’m Shivam Chatterjee, a passionate developer creating elegant and responsive web experiences. I specialize in <span className="text-teal-400 font-semibold">React</span>, <span className="text-teal-400 font-semibold">TailwindCSS</span>, and <span className="text-teal-400 font-semibold">Node.js</span>, building projects that are both functional and visually appealing.
-        </p>
+        <p className="text-lg md:text-xl leading-relaxed text-justify">
+  Hi, I’m{" "}
+  <span className="font-semibold text-teal-400">Shivam Chatterjee</span>, a passionate developer and lifelong learner. 
+  I have a strong foundation in web development and am currently expanding my knowledge in{" "}
+  <span className="text-teal-400 font-semibold">AI/ML</span> and{" "}
+  <span className="text-teal-400 font-semibold">Data Science</span>. 
+  I enjoy building responsive and elegant web applications while exploring the exciting world of artificial intelligence and data-driven technologies.
+</p>
+
+
       </motion.div>
 
       {/* Dot animation */}
@@ -54,7 +61,9 @@ const About = () => {
         @keyframes shootingDot {
           0% { transform: translate(0, 0); opacity: 0; }
           10% { opacity: 1; }
-          100% { transform: translate(${50 + Math.random()*100}px, ${50 + Math.random()*100}px); opacity: 0; }
+          100% { transform: translate(${50 + Math.random() * 100}px, ${
+        50 + Math.random() * 100
+      }px); opacity: 0; }
         }
         .animate-shootingDot {
           animation-name: shootingDot;
