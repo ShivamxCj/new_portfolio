@@ -84,13 +84,12 @@ const Home = () => {
           animate="visible"
         >
           <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-teal-300 drop-shadow-lg">
-            Hi, I'm <br />
-            <span className="text-3xl text-light text-transparent stroke-teal">
-              Shivam Chatterjee
-            </span>
+            Hi, I'm {""} <br />
+            Shivam Chatterjee
+            
           </h1>
 
-          <div className="text-lg md:text-xl text-teal-200 min-h-[1.5rem] md:min-h-[2rem]">
+          <div className="text-lg md:text-xl text-white min-h-[1.5rem] md:min-h-[2rem]">
             <AnimatePresence mode="wait">
               {!showAll ? (
                 <motion.span
@@ -122,7 +121,7 @@ const Home = () => {
           <div className="mt-4 md:mt-6 flex flex-col md:flex-row md:justify-start items-center md:items-stretch gap-3 md:gap-4">
             <a
               href="#projects"
-              className="w-48 md:w-52 px-6 py-3 bg-teal-600/80 text-white rounded-lg hover:bg-teal-700/90 transition flex items-center justify-center gap-2 shadow-lg backdrop-blur-sm"
+              className="w-52 md:w-52 px-6 py-3 bg-teal-600/80 text-white rounded-lg hover:bg-teal-700/90 transition flex items-center justify-center gap-2 shadow-lg backdrop-blur-sm"
             >
               <FiExternalLink className="text-lg" />
               View My Work
@@ -130,7 +129,7 @@ const Home = () => {
             <a
               href="/resume.pdf"
               download
-              className="w-48 md:w-52 px-6 py-3 bg-emerald-700/80 text-white rounded-lg hover:bg-emerald-800/90 transition flex items-center justify-center gap-2 shadow-lg backdrop-blur-sm"
+              className="w-52 md:w-52 px-6 py-3 bg-emerald-700/80 text-white rounded-lg hover:bg-emerald-800/90 transition flex items-center justify-center gap-2 shadow-lg backdrop-blur-sm"
             >
               <HiDownload className="text-lg" />
               Download Resume

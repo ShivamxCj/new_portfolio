@@ -10,6 +10,7 @@ import Tech from "./components/Tech.jsx";
 import Contact from "./components/Contact.jsx";
 import CompetitiveProgramming from "./components/Competative.jsx";
 import Loader from "./components/Loader.jsx";
+import BackToTop from "./components/BacktoTop.jsx";
 
 function Main() {
   const [loading, setLoading] = useState(true);
@@ -33,6 +34,9 @@ function Main() {
         <Contact />
         <Footer />
       </div>
+
+      {/* Back to Top Button */}
+      <BackToTop />
     </div>
   );
 }

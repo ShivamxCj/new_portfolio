@@ -55,11 +55,12 @@ const Projects = () => {
           My Projects
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 items-stretch">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-gray-900/70 rounded-lg p-6 flex flex-col justify-between h-full shadow-lg backdrop-blur-sm w-full sm:w-2/3"
+              className="bg-gray-900/70 rounded-lg p-7 pb-10 flex flex-col justify-between h-full shadow-lg backdrop-blur-sm 
+             w-full md:w-full lg:w-full"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{
@@ -68,10 +69,10 @@ const Projects = () => {
               }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-semibold text-teal-300 mb-2">
+              <h3 className="text-xl font-semibold text-teal-300 mb-7">
                 {project.title}
               </h3>
-              <p className="text-gray-300 mb-4 flex-grow">
+              <p className="text-gray-300 mb-6 flex-grow">
                 {project.description}
               </p>
 
