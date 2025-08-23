@@ -1,5 +1,14 @@
 import React from "react";
-import { SiJavascript, SiReact, SiNodedotjs, SiPython, SiPostgresql, SiNumpy, SiScikitlearn } from "react-icons/si";
+import { motion } from "framer-motion";
+import {
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiPython,
+  SiPostgresql,
+  SiNumpy,
+  SiScikitlearn,
+} from "react-icons/si";
 
 const skills = [
   { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" size={28} /> },
@@ -12,8 +21,29 @@ const skills = [
 ];
 
 const TechStack = () => {
+  // Variants for staggered cards
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="relative min-h-screen px-4 py-20 bg-black overflow-hidden flex items-center justify-center" id="tech">
+    <section
+      className="relative min-h-screen px-4 py-20 bg-black overflow-hidden flex items-center justify-center"
+      id="tech"
+    >
       {/* Cosmic Dots */}
       <div className="absolute inset-0 z-0">
         {[...Array(50)].map((_, i) => (
@@ -31,24 +61,41 @@ const TechStack = () => {
       </div>
 
       {/* Skills Content */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-40 text-teal-300 drop-shadow-lg">
+      <motion.div
+        className="relative z-10 max-w-5xl mx-auto text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold mb-40 text-teal-300 drop-shadow-lg"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           Tech Stack
-        </h2>
-        <div className="flex flex-wrap justify-center gap-6">
+        </motion.h2>
+
+        <motion.div
+          className="flex flex-wrap justify-center gap-6"
+          variants={containerVariants}
+        >
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={cardVariants}
               className="bg-gray-900/60 text-teal-300 px-6 py-4 rounded-lg text-sm font-medium cursor-pointer select-none flex flex-col items-center gap-2 backdrop-blur-sm
-                         transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(64,224,208,0.8)]"
+                         transition-transform duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(64,224,208,0.9)]"
             >
               {skill.icon}
               <span>{skill.name}</span>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
+      {/* Dot animation */}
       <style>{`
         @keyframes shootingDot {
           0% { transform: translate(0,0); opacity:0; }

@@ -46,11 +46,11 @@ const Loader = ({ onFinish }) => {
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
         >
-          <div className="absolute w-32 h-32 rounded-full bg-teal-500 shadow-[0_0_30px_rgba(20,184,166,0.5)]" />
+          <div className="absolute w-16 h-16 rounded-full bg-teal-500 shadow-[0_0_30px_rgba(20,184,166,0.5)]" />
 
           {/* Rings */}
-          <div className="absolute w-40 h-2 border-2 border-teal-400 rounded-full rotate-45 opacity-50" />
-          <div className="absolute w-40 h-2 border-2 border-teal-400 rounded-full -rotate-45 opacity-50" />
+          {/* <div className="absolute w-40 h-2 border-2 border-teal-400 rounded-full rotate-45 opacity-50" />
+          <div className="absolute w-40 h-2 border-2 border-teal-400 rounded-full -rotate-45 opacity-50" /> */}
 
           {/* Circular progress */}
           <svg className="absolute w-40 h-40 -rotate-90">

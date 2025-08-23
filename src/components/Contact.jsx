@@ -20,21 +20,33 @@ const Contact = () => {
     setLoading(true);
 
     emailjs
-      .send(
-        "service_9y5e5b8",
-        "template_t7l617p",
-        formData,
-        "LqW2OzOsJfE4OmSCD"
-      )
+      .send("service_9y5e5b8", "template_t7l617p", formData, "LqW2OzOsJfE4OmSCD")
       .then(() => {
-        toast.success("Message sent successfully!"); // <-- Popup toast
+        toast.success("Message sent successfully!");
         setFormData({ user_name: "", user_email: "", message: "" });
       })
       .catch((err) => {
         console.error("Email error:", err);
-        toast.error("Failed to send message. Try again."); // <-- Error toast
+        toast.error("Failed to send message. Try again.");
       })
       .finally(() => setLoading(false));
+  };
+
+  // Variants for staggered inputs
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
@@ -64,20 +76,40 @@ const Contact = () => {
       {/* Content box */}
       <motion.div
         className="relative z-10 max-w-2xl w-full bg-black/60 p-8 rounded-lg shadow-lg text-gray-200"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-teal-300 text-center drop-shadow-lg">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold mb-6 text-teal-300 text-center drop-shadow-lg"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           Contact Me
-        </h2>
+        </motion.h2>
 
-        <p className="text-center text-gray-300 mb-8">
+        <motion.p
+          className="text-center text-gray-300 mb-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           Feel free to reach out for collaboration or just a friendly hello.
-        </p>
+        </motion.p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
+        <motion.form
+          onSubmit={handleSubmit}
+          className="space-y-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div variants={itemVariants}>
             <label className="block mb-1 text-gray-200 font-medium">Name</label>
             <input
               type="text"
@@ -87,9 +119,9 @@ const Contact = () => {
               onChange={handleChange}
               className="w-full border border-gray-600 rounded px-4 py-2 focus:ring-2 focus:ring-teal-400 bg-black/40 text-white"
             />
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div variants={itemVariants}>
             <label className="block mb-1 text-gray-200 font-medium">Email</label>
             <input
               type="email"
@@ -99,9 +131,9 @@ const Contact = () => {
               onChange={handleChange}
               className="w-full border border-gray-600 rounded px-4 py-2 focus:ring-2 focus:ring-teal-400 bg-black/40 text-white"
             />
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div variants={itemVariants}>
             <label className="block mb-1 text-gray-200 font-medium">Message</label>
             <textarea
               name="message"
@@ -111,26 +143,28 @@ const Contact = () => {
               onChange={handleChange}
               className="w-full border border-gray-600 rounded px-4 py-2 focus:ring-2 focus:ring-teal-400 bg-black/40 text-white"
             ></textarea>
-          </div>
+          </motion.div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full flex justify-center items-center gap-2 bg-teal-600 hover:bg-teal-700 transition px-6 py-3 rounded text-white font-semibold disabled:opacity-50"
-          >
-            {loading ? (
-              <>
-                <FiLoader className="animate-spin" />
-                Sending...
-              </>
-            ) : (
-              <>
-                <FiSend />
-                Send Message
-              </>
-            )}
-          </button>
-        </form>
+          <motion.div variants={itemVariants}>
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full flex justify-center items-center gap-2 bg-teal-600 hover:bg-teal-700 transition px-6 py-3 rounded text-white font-semibold disabled:opacity-50"
+            >
+              {loading ? (
+                <>
+                  <FiLoader className="animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <FiSend />
+                  Send Message
+                </>
+              )}
+            </button>
+          </motion.div>
+        </motion.form>
       </motion.div>
 
       {/* Dot animation */}

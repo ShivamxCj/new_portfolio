@@ -24,36 +24,55 @@ const CompetitiveProgramming = () => {
       </div>
 
       {/* Section Heading */}
-      <h1 className="relative z-10 text-4xl md:text-5xl font-bold mb-16 text-teal-300 drop-shadow-lg">
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="relative z-10 text-4xl md:text-5xl font-bold mb-24 mt-12 text-teal-300 drop-shadow-lg"
+      >
         Coding Profile
-      </h1>
+      </motion.h1>
 
       {/* LeetCode Card */}
-      <div className="relative z-10 text-center flex flex-col items-center gap-6">
-        {/* <h2 className="text-3xl font-bold mb-6 text-teal-300 drop-shadow-lg">
-          LeetCode
-        </h2> */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="relative z-10 text-center flex flex-col items-center gap-6"
+      >
         <img
           src="https://leetcard.jacoblin.cool/sivm_cj?theme=dark&font=Baloo%20Bhaijaan%202&ext=contest"
           alt="LeetCode Stats"
           className="mx-auto mb-4 rounded-lg shadow-lg border-2 border-teal-400/50 w-full max-w-md"
         />
-        <a
+
+        {/* Button */}
+        <motion.a
           href="https://leetcode.com/u/sivm_cj/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-teal-500 text-black px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
+          whileHover={{ scale: 1.1}} // 🔥 bigger scale
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }} // ⚡ smoother transition
+          viewport={{ once: true }}
+          className="inline-block bg-teal-500 text-black px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg mt-10"
         >
           View LeetCode
-        </a>
-      </div>
+        </motion.a>
+      </motion.div>
 
       {/* Shooting Dot Animation */}
       <style>{`
         @keyframes shootingDot {
           0% { transform: translate(0,0); opacity:0; }
           10% { opacity:1; }
-          100% { transform: translate(${50 + Math.random() * 100}px, ${50 + Math.random() * 100}px); opacity:0; }
+          100% { transform: translate(${50 + Math.random() * 100}px, ${
+        50 + Math.random() * 100
+      }px); opacity:0; }
         }
         .animate-shootingDot {
           animation-name: shootingDot;

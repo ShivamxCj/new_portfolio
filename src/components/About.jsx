@@ -2,13 +2,20 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const About = () => {
-  const paragraphVariants = {
+  // Parent container for stagger
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  // Child animation for heading & paragraphs
+  const fadeUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.3, duration: 0.6, ease: "easeOut" },
-    }),
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
@@ -33,27 +40,37 @@ const About = () => {
         ))}
       </div>
 
-      {/* Content box */}
+      {/* Content box with staggered animations */}
       <motion.div
         className="relative z-10 max-w-3xl mx-auto bg-black/50 p-8 rounded-lg shadow-lg text-center text-gray-200"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-teal-300 drop-shadow-lg">
+        {/* Heading */}
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold mb-24 text-teal-300 drop-shadow-lg"
+          variants={fadeUp}
+        >
           About Me
-        </h2>
+        </motion.h2>
 
-        <p className="text-lg md:text-xl leading-relaxed text-justify">
-  Hi, I’m{" "}
-  <span className="font-semibold text-teal-400">Shivam Chatterjee</span>, a passionate developer and lifelong learner. 
-  I have a strong foundation in web development and am currently expanding my knowledge in{" "}
-  <span className="text-teal-400 font-semibold">AI/ML</span> and{" "}
-  <span className="text-teal-400 font-semibold">Data Science</span>. 
-  I enjoy building responsive and elegant web applications while exploring the exciting world of artificial intelligence and data-driven technologies.
-</p>
-
-
+        {/* Paragraph */}
+        <motion.p
+          className="text-lg md:text-xl leading-relaxed text-justify"
+          variants={fadeUp}
+        >
+          Hi, I’m{" "}
+          <span className="font-semibold text-teal-400">Shivam Chatterjee</span>, a passionate
+          developer and lifelong learner. I have a strong foundation in web
+          development and am currently expanding my knowledge in{" "}
+          <span className="text-teal-400 font-semibold">AI/ML</span> and{" "}
+          <span className="text-teal-400 font-semibold">Data Science</span>. I
+          enjoy building responsive and elegant web applications while exploring
+          the exciting world of artificial intelligence and data-driven
+          technologies.
+        </motion.p>
       </motion.div>
 
       {/* Dot animation */}
