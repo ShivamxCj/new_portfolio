@@ -56,8 +56,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center
-                 bg-black px-4 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-black px-4 overflow-hidden"
     >
       {/* Shooting stars background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -76,7 +75,7 @@ const Home = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
         {/* Text Section */}
         <motion.div
           className="text-center md:text-left order-2 md:order-1 flex flex-col justify-center"
@@ -84,46 +83,46 @@ const Home = () => {
           initial="hidden"
           animate="visible"
         >
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-teal-300 drop-shadow-lg">
-           <h1 class="text-3xl text-light text-transparent stroke-teal">Hi, I'm {" "}<br /></h1> 
+          <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-teal-300 drop-shadow-lg">
+            Hi, I'm <br />
+            <span className="text-3xl text-light text-transparent stroke-teal">
               Shivam Chatterjee
+            </span>
           </h1>
 
-          <div className="text-lg text-teal-200 min-h-[1.5rem] md:min-h-[2rem]">
-  <AnimatePresence mode="wait">
-    {!showAll ? (
-      <motion.span
-        key={roles[index]}
-        variants={textVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        className="inline-block"
-      >
-        {roles[index]}
-      </motion.span>
-    ) : (
-      <motion.span
-        key="all-roles"
-        variants={textVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        className="inline-block"
-      >
-        {roles.join(" | ")}
-      </motion.span>
-    )}
-  </AnimatePresence>
-</div>
-
+          <div className="text-lg md:text-xl text-teal-200 min-h-[1.5rem] md:min-h-[2rem]">
+            <AnimatePresence mode="wait">
+              {!showAll ? (
+                <motion.span
+                  key={roles[index]}
+                  variants={textVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  className="inline-block"
+                >
+                  {roles[index]}
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="all-roles"
+                  variants={textVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  className="inline-block"
+                >
+                  {roles.join(" | ")}
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* Buttons */}
-          <div className="mt-6 flex flex-col md:flex-row md:justify-start items-center md:items-stretch gap-4">
+          <div className="mt-4 md:mt-6 flex flex-col md:flex-row md:justify-start items-center md:items-stretch gap-3 md:gap-4">
             <a
               href="#projects"
-              className="w-52 px-6 py-3 bg-teal-600/80 text-white rounded-lg
-                         hover:bg-teal-700/90 transition text-center flex items-center justify-center gap-2 shadow-lg backdrop-blur-sm"
+              className="w-48 md:w-52 px-6 py-3 bg-teal-600/80 text-white rounded-lg hover:bg-teal-700/90 transition flex items-center justify-center gap-2 shadow-lg backdrop-blur-sm"
             >
               <FiExternalLink className="text-lg" />
               View My Work
@@ -131,8 +130,7 @@ const Home = () => {
             <a
               href="/resume.pdf"
               download
-              className="w-52 px-6 py-3 bg-emerald-700/80 text-white rounded-lg
-                         hover:bg-emerald-800/90 transition text-center flex items-center justify-center gap-2 shadow-lg backdrop-blur-sm "
+              className="w-48 md:w-52 px-6 py-3 bg-emerald-700/80 text-white rounded-lg hover:bg-emerald-800/90 transition flex items-center justify-center gap-2 shadow-lg backdrop-blur-sm"
             >
               <HiDownload className="text-lg" />
               Download Resume
@@ -150,9 +148,7 @@ const Home = () => {
           <img
             src={profile}
             alt="Profile"
-            className="w-40 h-40 md:w-80 md:h-80 object-cover rounded-full
-                       shadow-[0_0_25px_rgba(20,184,166,0.8)] border-4 border-teal-400/70
-                       hover:scale-105 transition-transform duration-300 ease-in-out"
+            className="w-36 h-36 md:w-80 md:h-80 object-cover rounded-full shadow-[0_0_25px_rgba(20,184,166,0.8)] border-4 border-teal-400/70 hover:scale-105 transition-transform duration-300 ease-in-out"
           />
         </motion.div>
       </div>

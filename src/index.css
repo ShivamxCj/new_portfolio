@@ -40,3 +40,7 @@ html {
 .stroke-teal {
   -webkit-text-stroke: 0.5px #14b8a6;
 }
+html {
+  scroll-behavior: smooth;
+}
+
