@@ -12,11 +12,11 @@ const projects = [
     github: "#",
   },
   {
-    title: "E-commerce App",
+    title: "CSV Cleaner",
     description:
-      "A full-stack e-commerce application using React, Node.js, and MongoDB.",
-    demo: "#",
-    github: "#",
+      "A application which cleans your dirt csv files.",
+    demo: "https://csv-cleaner-kappa.vercel.app/",
+    github: "https://github.com/ShivamxCj/CSV-Cleaner",
   },
   {
     title: "AI Chatbot",

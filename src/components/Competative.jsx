@@ -53,7 +53,7 @@ const CompetitiveProgramming = () => {
           href="https://leetcode.com/u/sivm_cj/"
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.1}} // 🔥 bigger scale
+          whileHover={{ scale: 1.1}} 
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
