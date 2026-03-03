@@ -4,27 +4,17 @@ import { FiExternalLink } from "react-icons/fi";
 import { HiDownload } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 
-const roles = ["Web Developer", "Data Engineer", "AI ML"];
+const roles = ["Web Developer", "Aspiring Data Analyst", "Aspiring Data Scientist"];
 
 const Home = () => {
   const [index, setIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!showAll) {
-        if (index === roles.length - 1) {
-          setShowAll(true);
-        } else {
-          setIndex(index + 1);
-        }
-      } else {
-        setTimeout(() => {
-          setShowAll(false);
-          setIndex(0);
-        }, 2000);
-      }
-    }, 1800);
+  const interval = setInterval(() => {
+    setIndex((prevIndex) => (prevIndex + 1) % roles.length);
+  }, 2500);
+
 
     return () => clearInterval(interval);
   }, [index, showAll]);

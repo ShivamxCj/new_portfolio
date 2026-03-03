@@ -42,36 +42,57 @@ const About = () => {
 
       {/* Content box with staggered animations */}
       <motion.div
-        className="relative z-10 max-w-3xl mx-auto bg-black/50 p-8 rounded-lg shadow-lg text-center text-gray-200"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        {/* Heading */}
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold mb-24 text-teal-300 drop-shadow-lg"
-          variants={fadeUp}
-        >
-          About Me
-        </motion.h2>
+  className="relative z-10 max-w-3xl mx-auto bg-black/50 p-8 rounded-lg shadow-lg text-center text-gray-200"
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+>
+  {/* Heading */}
+  <motion.h2
+    className="text-3xl md:text-4xl font-bold mb-12 text-teal-300 drop-shadow-lg"
+    variants={fadeUp}
+  >
+    About Me
+  </motion.h2>
 
-        {/* Paragraph */}
-        <motion.p
-          className="text-lg md:text-xl leading-relaxed text-justify"
-          variants={fadeUp}
-        >
-          Hi, I’m{" "}
-          <span className="font-semibold text-teal-400">Shivam Chatterjee</span>, a passionate
-          developer and lifelong learner. I have a strong foundation in web
-          development and am currently expanding my knowledge in{" "}
-          <span className="text-teal-400 font-semibold">AI/ML</span> and{" "}
-          <span className="text-teal-400 font-semibold">Data Science</span>. I
-          enjoy building responsive and elegant web applications while exploring
-          the exciting world of artificial intelligence and data-driven
-          technologies.
-        </motion.p>
-      </motion.div>
+  {/* About Paragraph */}
+  <motion.p
+    className="text-lg md:text-xl leading-relaxed text-justify mb-10"
+    variants={fadeUp}
+  >
+    Hi, I’m{" "}
+    <span className="font-semibold text-teal-400">
+      Shivam Chatterjee
+    </span>
+    , a data-focused developer passionate about transforming raw data into
+    meaningful insights. I have hands-on experience in{" "}
+    <span className="text-teal-400 font-semibold">
+      SQL, Python, and data visualization
+    </span>{" "}
+    and have worked on building data warehouses and analytics dashboards. I am
+    actively strengthening my foundations in{" "}
+    <span className="text-teal-400 font-semibold">
+      Data Engineering
+    </span>{" "}
+    and{" "}
+    <span className="text-teal-400 font-semibold">
+      Machine Learning
+    </span>{" "}
+    to design scalable data solutions and intelligent systems.
+  </motion.p>
+
+  {/* Education Section */}
+  <motion.div variants={fadeUp}>
+
+    <p className="text-lg text-gray-300 mt-20">
+      B.Tech | Mechanical Engineering (2027 Batch) <br />
+      <span className="text-teal-400 font-medium">
+        National Institute of Technology, Bhopal
+      </span>
+    </p>
+  </motion.div>
+</motion.div>
 
       {/* Dot animation */}
       <style>{`

@@ -9,7 +9,7 @@ const Sidebar = () => {
     { icon: <AiFillHome />, href: "#home", name: "Home" },
     { icon: <FaUser />, href: "#about", name: "About" },
     { icon: <SiReact />, href: "#tech", name: "Tech Stack" }, // Tech Stack icon
-    { icon: <SiLeetcode />, href: "#cp", name: "Coding Profile" }, // Coding Profile icon
+    // { icon: <SiLeetcode />, href: "#cp", name: "Coding Profile" }, // Coding Profile icon
     { icon: <FaLaptopCode />, href: "#projects", name: "Projects" },
     { icon: <HiOutlineMail />, href: "#contact", name: "Contact" },
   ];

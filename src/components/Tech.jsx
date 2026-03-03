@@ -1,27 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  SiJavascript,
-  SiReact,
-  SiNodedotjs,
-  SiPython,
-  SiPostgresql,
-  SiNumpy,
-  SiScikitlearn,
-} from "react-icons/si";
+import { SiReact, SiPython, SiPandas, SiScikitlearn } from "react-icons/si";
+import { FaDatabase } from "react-icons/fa";
 
 const skills = [
-  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" size={28} /> },
-  { name: "React JS", icon: <SiReact className="text-cyan-400" size={28} /> },
-  { name: "Node JS", icon: <SiNodedotjs className="text-green-600" size={28} /> },
+  { name: "React", icon: <SiReact className="text-cyan-400" size={28} /> },
+  { name: "SQL", icon: <FaDatabase className="text-blue-500" size={28} /> },
   { name: "Python", icon: <SiPython className="text-blue-600" size={28} /> },
-  { name: "SQL", icon: <SiPostgresql className="text-blue-700" size={28} /> },
-  { name: "NumPy", icon: <SiNumpy className="text-blue-500" size={28} /> },
-  { name: "Scikit Learn", icon: <SiScikitlearn className="text-green-700" size={28} /> },
+  { name: "Pandas", icon: <SiPandas className="text-blue-400" size={28} /> },
+  { name: "Machine Learning", icon: <SiScikitlearn className="text-orange-500" size={28} /> },
 ];
 
 const TechStack = () => {
-  // Variants for staggered cards
   const containerVariants = {
     hidden: {},
     visible: {
@@ -44,7 +34,7 @@ const TechStack = () => {
       className="relative min-h-screen px-4 py-20 bg-black overflow-hidden flex items-center justify-center"
       id="tech"
     >
-      {/* Cosmic Dots */}
+      {/* Cosmic Background Dots */}
       <div className="absolute inset-0 z-0">
         {[...Array(50)].map((_, i) => (
           <span
@@ -85,8 +75,11 @@ const TechStack = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-gray-900/60 text-teal-300 px-6 py-4 rounded-lg text-sm font-medium cursor-pointer select-none flex flex-col items-center gap-2 backdrop-blur-sm
-                         transition-transform duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(64,224,208,0.9)]"
+              className="w-40 h-32 bg-gray-900/60 text-teal-300 
+           rounded-xl flex flex-col items-center justify-center gap-3
+           backdrop-blur-sm shadow-lg
+           transition-all duration-300 
+           hover:scale-110 hover:shadow-[0_0_30px_rgba(64,224,208,1)]"
             >
               {skill.icon}
               <span>{skill.name}</span>
@@ -95,7 +88,7 @@ const TechStack = () => {
         </motion.div>
       </motion.div>
 
-      {/* Dot animation */}
+      {/* Dot Animation */}
       <style>{`
         @keyframes shootingDot {
           0% { transform: translate(0,0); opacity:0; }

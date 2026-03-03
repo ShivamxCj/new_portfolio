@@ -29,7 +29,7 @@ function Main() {
         <Home />
         <About />
         <Tech />
-        <CompetitiveProgramming />
+        {/* <CompetitiveProgramming /> */}
         <Projects />
         <Contact />
         <Footer />
