@@ -1,15 +1,16 @@
 import React from "react";
 import { AiFillHome } from "react-icons/ai";
-import { FaUser, FaLaptopCode } from "react-icons/fa";
+import { FaUser, FaLaptopCode, FaCertificate } from "react-icons/fa"; // Added FaCertificate
 import { HiOutlineMail } from "react-icons/hi";
-import { SiReact, SiLeetcode } from "react-icons/si"; // Tech Stack & Coding Profile icons
+import { SiReact } from "react-icons/si";
+import { PiCertificateFill } from "react-icons/pi";
 
 const Sidebar = () => {
   const links = [
     { icon: <AiFillHome />, href: "#home", name: "Home" },
     { icon: <FaUser />, href: "#about", name: "About" },
-    { icon: <SiReact />, href: "#tech", name: "Tech Stack" }, // Tech Stack icon
-    // { icon: <SiLeetcode />, href: "#cp", name: "Coding Profile" }, // Coding Profile icon
+    { icon: <SiReact />, href: "#tech", name: "Tech Stack" },
+    { icon: <PiCertificateFill />, href: "#certificates", name: "Certifications" }, // ✅ Added here
     { icon: <FaLaptopCode />, href: "#projects", name: "Projects" },
     { icon: <HiOutlineMail />, href: "#contact", name: "Contact" },
   ];

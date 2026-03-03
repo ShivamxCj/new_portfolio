@@ -119,7 +119,7 @@ const Home = () => {
             <a
               href="/resume.pdf"
               download
-              className="w-52 md:w-52 px-6 py-3 bg-emerald-700/80 text-white rounded-lg hover:bg-emerald-800/90 transition flex items-center justify-center gap-2 shadow-lg backdrop-blur-sm"
+              className="w-60 md:w-60 px-6 py-3 bg-emerald-700/80 text-white rounded-lg hover:bg-emerald-800/90 transition flex items-center justify-center gap-2 shadow-lg backdrop-blur-sm"
             >
               <HiDownload className="text-lg" />
               Download Resume

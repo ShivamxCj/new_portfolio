@@ -25,8 +25,8 @@ const Footer = () => {
         {/* Made with ❤️ and React */}
         <p className="text-sm text-teal-400 flex items-center gap-2 justify-center">
           Made with{" "}
-          <span className="text-red-500 animate-pulse inline-block">❤️</span> and{" "}
-          <FaReact className="text-blue-400 animate-pulse inline-block" />
+          <span className="text-red-500 animate-pulse inline-block">consciousness</span> and{" "}
+          <FaReact className="text-blue-300 text-lg animate-pulse inline-block" />
         </p>
 
         {/* Centered Text */}

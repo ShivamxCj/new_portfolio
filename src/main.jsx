@@ -11,6 +11,7 @@ import Contact from "./components/Contact.jsx";
 import CompetitiveProgramming from "./components/Competative.jsx";
 import Loader from "./components/Loader.jsx";
 import BackToTop from "./components/BacktoTop.jsx";
+import Certificates from "./components/Certificates.jsx";
 
 function Main() {
   const [loading, setLoading] = useState(true);
@@ -29,6 +30,7 @@ function Main() {
         <Home />
         <About />
         <Tech />
+        <Certificates/>
         {/* <CompetitiveProgramming /> */}
         <Projects />
         <Contact />
