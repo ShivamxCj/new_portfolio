@@ -38,10 +38,6 @@ const techStack = [
         icon: <SiTensorflow className="text-orange-400" size={30} />,
       },
       {
-        name: "PyTorch",
-        icon: <SiPytorch className="text-red-500" size={30} />,
-      },
-      {
         name: "Scikit-Learn",
         icon: <SiScikitlearn className="text-orange-500" size={30} />,
       },
