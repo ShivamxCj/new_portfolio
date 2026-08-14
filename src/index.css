@@ -47,3 +47,11 @@ html {
 *{
   font-family: "Cascadia Mono", sans-serif;
 }
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}

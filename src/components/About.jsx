@@ -56,8 +56,7 @@ const About = () => {
     About Me
   </motion.h2>
 
- {/* About Paragraph */}
-<motion.p
+ <motion.p
   className="text-lg md:text-xl leading-relaxed text-justify mb-10"
   variants={fadeUp}
 >
@@ -68,21 +67,16 @@ const About = () => {
   , an aspiring{" "}
   <span className="text-teal-400 font-semibold">
     AI/ML Engineer and Data Scientist
-  </span>{" "}
-  passionate about building intelligent systems and extracting meaningful
-  insights from data. I have hands-on experience with{" "}
-  <span className="text-teal-400 font-semibold">
-    Python, SQL, Machine Learning, Data Analysis, and Data Visualization
-  </span>{" "}
-  and have worked on projects involving{" "}
-  <span className="text-teal-400 font-semibold">
-    Generative AI, RAG applications, Computer Vision, Data Warehousing, and BI dashboards
   </span>
-  . I am continuously strengthening my skills in{" "}
+  {" "}passionate about building intelligent systems using{" "}
   <span className="text-teal-400 font-semibold">
-    Deep Learning, Data Engineering, and Cloud Technologies
-  </span>{" "}
-  to develop scalable data-driven solutions and intelligent applications.
+    Machine Learning, Generative AI, and Data Analytics
+  </span>
+  . I have experience with{" "}
+  <span className="text-teal-400 font-semibold">
+    Python, SQL, Deep Learning, RAG applications, Computer Vision, and Data Engineering
+  </span>
+  , focused on creating scalable data-driven solutions.
 </motion.p>
 
   {/* Education Section */}
