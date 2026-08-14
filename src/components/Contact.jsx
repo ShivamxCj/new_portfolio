@@ -20,7 +20,7 @@ const Contact = () => {
     setLoading(true);
 
     emailjs
-      .send("service_9y5e5b8", "template_t7l617p", formData, "LqW2OzOsJfE4OmSCD")
+      .send("service_5tn3wpk", "template_t7l617p", formData, "LqW2OzOsJfE4OmSCD")
       .then(() => {
         toast.success("Message sent successfully!");
         setFormData({ user_name: "", user_email: "", message: "" });
